@@ -7,17 +7,20 @@ class AbstractSourceDto(ABC):
     def __init__(self, name=None, age=None, city=None):pass
 
 
-#!!!!!!!!!!!!!!!!!! None is a must !!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!"| None = None" used necessary !!!!!!!!!!!!!!!!!!!!!!
+
 class SourceDto(AbstractSourceDto):#ERROR if AbstractSourceDto is not inherited!!!
-    @typeguard.typechecked
-    def __init__(self, name:str=None, age:int=None, city:str=None):
+    @typeguard.typechecked  
+    def __init__(self, name:str| None = None, age:int| None = None, city:str| None = None):
         self.name = name
         self.age = age
         self.city = city
-#!!!!!!!!!!!!!!!!!! None is a must !!!!!!!!!!!!!!!!!!!!!!
+
+
+#!!!!!!!"| None = None" used necessary !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class Dto2(AbstractSourceDto):#ERROR if AbstractSourceDto is not inherited!!!
     @typeguard.typechecked
-    def __init__(self, name:str=None, age:int=None, city:str=None):
+    def __init__(self, name:str| None = None, age:int| None = None, city:str| None = None):
         self.name = name
         self.age = age
         self.city = city
